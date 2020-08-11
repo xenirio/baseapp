@@ -17,18 +17,6 @@
     width: 50%;
   }
 
-  .pg-combined-order-book--no-data-first {
-    .cr-order-book:first-child {
-      .cr-table-container {
-        height: 100%;
-
-        .cr-table__body tr td {
-          top: 114px;
-        }
-      }
-    }
-  }
-
   .pg-combined-order-book .cr-combined-order-book {
     width: 100%;
 
@@ -64,9 +52,8 @@
 
       .cr-table thead {
         display: flex;
-        height: 100%;
-        position: sticky;
-        top: 0;
+        position: fixed;
+        top: 191px;
         width: 100%;
         width: calc(50vw - 24px);
 
