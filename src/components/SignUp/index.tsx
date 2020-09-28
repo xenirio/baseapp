@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { CustomInput, PasswordStrengthMeter } from '../';
+import { passwordEntropyStep } from '../../api';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '../../helpers';
 import { selectMobileDeviceState } from '../../modules/public/globalSettings';
 
@@ -96,7 +97,7 @@ export const SignUpForm = (props: SignUpFormProps) => {
     } = props;
 
     const disableButton = (): boolean => {
-        if (!hasConfirmed || isLoading || !email.match(EMAIL_REGEX) || !password || !confirmPassword) {
+        if (!hasConfirmed || isLoading || !email.match(EMAIL_REGEX) || !password || !confirmPassword || props.currentPasswordEntropy < passwordEntropyStep()) {
             return true;
         }
         if (captchaType === 'recaptcha' && !reCaptchaSuccess) {
