@@ -5,7 +5,7 @@ import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { showLanding } from '../../api';
-import { LogoIcon } from '../../assets/images/LogoIcon';
+import { LogoIcon } from '../../custom/assets/images/LogoIcon';
 import { IntlProps } from '../../index';
 import {
     Market,
@@ -21,7 +21,6 @@ import {
     toggleSidebar,
 } from '../../modules';
 import { HeaderToolbar } from '../HeaderToolbar';
-import { NavBar } from '../NavBar';
 
 interface ReduxProps {
     currentMarket: Market | undefined;
@@ -85,7 +84,6 @@ class Head extends React.Component<Props> {
                     {this.renderMobileWalletNav()}
                     <div className="pg-header__navbar">
                         {this.renderMarketToolbar()}
-                        <NavBar onLinkChange={this.closeMenu}/>
                     </div>
                 </div>
             </header>
@@ -144,8 +142,6 @@ class Head extends React.Component<Props> {
     private openSidebar = () => this.props.toggleSidebar(!this.props.sidebarOpened);
 
     private backWallets = () => this.props.setMobileWalletUi('');
-
-    private closeMenu = (e: any) => this.props.setMobileWalletUi('');
 }
 
 const mapStateToProps = (state: RootState): ReduxProps => ({

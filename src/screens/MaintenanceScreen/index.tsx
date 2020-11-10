@@ -5,7 +5,7 @@ import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { BackgroundMaintenance } from '../../assets/images/BackgroundMaintenance';
-import { LogoIcon } from '../../assets/images/LogoIcon';
+import { LogoIcon } from '../../custom/assets/images/LogoIcon';
 import { setDocumentTitle } from '../../helpers';
 import { IntlProps } from '../../index';
 import { RootState, selectPlatformAccessStatus } from '../../modules';

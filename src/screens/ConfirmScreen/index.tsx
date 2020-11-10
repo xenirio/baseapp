@@ -6,8 +6,8 @@ import { RouterProps } from 'react-router';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import { kycSteps } from '../../api';
-import { LogoIcon } from '../../assets/images/LogoIcon';
 import { Address, Documents, Identity, Phone } from '../../containers';
+import { LogoIcon } from '../../custom/assets/images/LogoIcon';
 import { getVerificationStep, setDocumentTitle } from '../../helpers';
 import { IntlProps } from '../../index';
 import {

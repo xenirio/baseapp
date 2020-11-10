@@ -3,8 +3,8 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import { Link, RouteProps, withRouter } from 'react-router-dom';
 import { compose } from 'redux';
-import { LogoIcon } from '../../assets/images/LogoIcon';
 import { MarketsTable } from '../../containers';
+import { LogoIcon } from '../../custom/assets/images/LogoIcon';
 import { IntlProps } from '../../index';
 import {
     RootState,

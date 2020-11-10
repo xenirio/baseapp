@@ -3,8 +3,8 @@ import { Button } from 'react-bootstrap';
 import { useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { LogoIcon } from '../../../assets/images/LogoIcon';
 import { ProfileIcon } from '../../../assets/images/sidebar/ProfileIcon';
+import { LogoIcon } from '../../../custom/assets/images/LogoIcon';
 import { selectUserLoggedIn } from '../../../modules';
 
 const HeaderComponent: React.FC = () => {
