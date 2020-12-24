@@ -115,8 +115,6 @@ steps:
         from_secret: docker_password
       repo:
         from_secret: docker_repo
-      build_args:
-        - BUILD_DOMAIN=xip.io
 
   - name: "Redeploy on Vee's OpenDAX"
     image: rubykube/microkube:0.2.0
