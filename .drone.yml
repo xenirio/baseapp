@@ -18,6 +18,10 @@ steps:
       - yarn lint
       - yarn test:ci --collectCoverage=true
       - yarn build
+    when:
+      branch:
+        exclude:
+          - master
 
   # - name: "Stage with mock server"
   #   image: instrumentisto/rsync-ssh
@@ -117,7 +121,7 @@ steps:
     image: rubykube/microkube:0.2.0
     environment:
       WEBHOOK_JWT_SECRET:
-        from_secret: devkube_webhook_secret
+        from_secret: webhook_secret
       DOCKER_REPO:
         from_secret: docker_repo
     commands:
