@@ -69,8 +69,7 @@ kind: pipeline
 name: "New version"
 
 environment:
-  OPENDAX_DNS:
-    from_secret: dns
+  OPENDAX_DNS: 34.121.8.37.xip.io
 
 concurrency:
   limit: 2
