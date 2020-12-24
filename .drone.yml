@@ -129,7 +129,7 @@ steps:
       DOCKER_REPO:
         from_secret: docker_repo
     commands:
-      - export latest_image=$DOCKER_REPO:$(cat .tags)
+      - export latest_image=$DOCKER_REPO:latest
       - cd /home/app
       - bundle exec rake payload:send[frontend,$latest_image,http://$OPENDAX_DNS:1337]
     when:
