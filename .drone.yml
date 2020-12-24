@@ -5,23 +5,23 @@ name: "Push"
 concurrency:
   limit: 2
 
-# steps:
-#   - name: "Test & Build"
-#     image: node:12.13.1
-#     commands:
-#       - export REACT_APP_GIT_SHA=$(git rev-parse --short HEAD)
-#       - echo $REACT_APP_GIT_SHA > .tags
-#       - export BUILD_DOMAIN=$(cat .domains)
-#       - export BUILD_EXPIRE=$(date -d "+1 month" +%s000)
-#       - npm -g install yarn
-#       - yarn install
-#       - yarn lint
-#       - yarn test:ci --collectCoverage=true
-#       - yarn build
-#     when:
-#       branch:
-#         exclude:
-#           - master
+steps:
+  - name: "Test & Build"
+    image: node:12.13.1
+    commands:
+      - export REACT_APP_GIT_SHA=$(git rev-parse --short HEAD)
+      - echo $REACT_APP_GIT_SHA > .tags
+      - export BUILD_DOMAIN=$(cat .domains)
+      - export BUILD_EXPIRE=$(date -d "+1 month" +%s000)
+      - npm -g install yarn
+      - yarn install
+      - yarn lint
+      - yarn test:ci --collectCoverage=true
+      - yarn build
+    when:
+      branch:
+        exclude:
+          - master
 
   # - name: "Stage with mock server"
   #   image: instrumentisto/rsync-ssh
@@ -86,6 +86,10 @@ steps:
       - yarn install
       - yarn lint
       - yarn test:ci --collectCoverage=true
+    when:
+      branch:
+        exclude:
+          - master
 
   # - name: "Bump & Tag"
   #   image: quay.io/openware/sdk-citools:2.4.5
